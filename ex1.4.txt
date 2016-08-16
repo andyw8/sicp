@@ -1,0 +1,24 @@
+“Observe that our model of evaluation allows for combinations whose operators
+are compound expressions. Use this observation to describe the behavior of the
+following procedure:
+
+(define (a-plus-abs-b a b)
+  ((if (> b 0) + -) a b))
+”
+
+If `b` is positive, this is effectively:
+
+(define (a-plus-abs-b a b)
+  (+ a b))
+
+If `b` is negative, this is effectively:
+
+(define (a-plus-abs-b a b)
+  (- a b))
+
+Which is mathematically equivalent to:
+
+(define (a-plus-abs-b a b)
+  (+ a -b))
+
+i.e. `b` is negated, then `a` and `b` are summed.
