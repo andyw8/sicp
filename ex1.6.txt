@@ -1,0 +1,2 @@
+In an ordinary procedure, all the terms are evaluated, which would result in an
+infinite recursion.
